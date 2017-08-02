@@ -1,0 +1,44 @@
+<!--pages/mine/index.wxml-->
+<view class="page {{show?'pageShow':''}}">
+    <view class="mine-top">
+        <view class="user-photo">
+            <image src="{{userInfo===''?'/images/youke.png':userInfo.avatarUrl}}"></image>
+            <text>{{userInfo===''?'游客':userInfo.nickName}}</text>
+            <view class="survey-total">创建投票总数：<text>{{surveyCount}}</text></view>
+        </view>
+    </view>
+    <view class="height"></view>
+    <view class="mine-container">
+        <view wx:if="{{noData}}" class="no-data">
+            您还没有创建投票，点击<label bindtap="openIndex">创建</label>
+        </view>
+        <view wx:if="{{!noData}}"  class="ul payment-wizard" wx:for="{{surveyList}}">
+            <view class="li {{currLiActiveIndex===index?'active':''}}">
+                <view  data-idx="{{index}}" catchtap="wizardHeadTap" class="wizard-heading">
+                    <view class="survey-title ellipsis">{{index+1}}、{{item.title}}</view>
+                    <span class="icon-num">{{item.voteNums>99?"99+":item.voteNums}}</span>
+                </view>
+                <view class="wizard-outer">
+                    <view class="wizard-content">
+                       <view data-survey-id="{{item.id}}" catchtap="watch" class="wizard-gird">
+                            <image mode="widthFix" src="/images/icon-watch.png"></image>
+                            <view>查看</view>
+                        </view>
+                        <view data-survey-id="{{item.id}}" catchtap="edit" class="wizard-gird">
+                            <image mode="widthFix" src="/images/icon-edit.png"></image>
+                            <view>编辑</view>
+                        </view>
+                       
+                        <view data-survey-id="{{item.id}}" catchtap="del" class="wizard-gird">
+                            <image mode="widthFix" src="/images/icon-del.png"></image>
+                            <view>删除</view>
+                        </view>
+                    </view>
+                </view>
+            </view>
+        </view>
+        <view  class="no-more-data">
+            {{noMoreDataTxt}}
+        </view>
+    </view>
+</view>

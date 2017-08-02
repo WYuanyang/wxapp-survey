@@ -1,0 +1,147 @@
+/* pages/result/index.wxss */
+.result-container{
+    padding: 30rpx;
+}
+.title,.summary,.preview-imgs{
+    margin-bottom: 40rpx;
+}
+.title{
+    font-size:40rpx; 
+}
+.title label{
+    color: #5f1971
+}
+.summary{
+    color: #666;
+    font-size: 28rpx;
+    line-height: 40rpx;
+    padding-left: 20rpx;
+}
+.preview-imgs{
+  display: flex;
+  /*justify-content: space-between;*/
+}
+.preview-imgs image{
+  background: #ddd;
+  width: 216rpx;
+  height:216rpx;
+  border-radius:6rpx;
+  margin-right: 21rpx; 
+}
+.preview-imgs image:last-child{
+    margin-right: 0rpx;
+}
+.radio,.checkbox{
+    display: flex;
+    /*height: 120rpx;*/
+    align-items: center;
+    margin-bottom: 10rpx;
+}
+.answer-box{
+    flex: 1;
+    margin-left: 10rpx;
+}
+.answer-row{
+    display: flex;
+    border: 2rpx solid #5f1971;
+    border-bottom: none;
+    padding: 20rpx;
+    align-items: center;
+    box-sizing: border-box;
+}
+.answer-row .answer-txt{
+    width: 65%;
+    font-size: 30rpx;
+    line-height: 40rpx;
+}
+.answer-row .answer-peoples{
+    width: 20%;
+    text-align: center;
+    font-size: 28rpx;
+}
+.answer-peoples label{
+    color: #5f1971;
+    padding-right: 6rpx;
+    font-size: 30rpx;
+    font-weight: 600
+
+}
+.answer-row .answer-percent{
+    width: 15%;
+    color: #5f1971;
+    text-align: center;
+    font-size: 28rpx;
+}
+
+button[disabled][type="default"] {
+color:rgba(0, 0, 0, 0.4);
+background-color:#eee;
+}
+
+.end-date{
+    font-size: 28rpx;
+}
+.participant-box{
+    display: flex;
+    padding-left:70rpx;
+    padding-bottom: 20rpx;
+    flex-wrap: wrap;
+    transition: 0.3s;
+}
+.participant{
+    display: flex;
+    margin-right: 20rpx;
+    flex-flow: column;
+    align-items: center;
+    justify-content:center;
+    transition: 0.3s;
+}
+.participant image{
+    width: 54rpx;
+    height: 54rpx;
+    border-radius: 100%;
+    border: 2px solid rgba(221, 221, 221, 0.81);
+}
+.icon-more image{
+    border: none;
+}
+.participant text{
+    font-size: 24rpx;
+    color: #999
+}
+.elliptic-sentences text{
+   font-size: 24rpx;
+   font-weight: 600
+}
+.re-bottom{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 60rpx;
+}
+.toIndex{
+  text-align: right;
+  font-size: 28rpx;
+  color: #999;
+  box-sizing: border-box;
+  padding-left: 30rpx;
+  
+}
+.toIndex text{
+  font-size: 32rpx;
+  /*font-weight: 600;*/
+  color: #5f1971
+}
+.share button{
+  font-size:32rpx;
+  color:#5f1971;
+  line-height: 1;
+  margin: 0;
+  padding-right: 30rpx;
+  border: none;
+  background-color: transparent;
+}
+.share button::after{
+  width: 0;
+  height: 0
+}

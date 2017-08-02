@@ -1,0 +1,37 @@
+<view class="page pageShow">
+    <view class="mine-top">
+        <view class="user-photo">
+            <image bindtap="previewImage" data-url='http://ac-SEe3ofqL.clouddn.com/58a43d424d51363fe9be.jpg' src="http://ac-SEe3ofqL.clouddn.com/58a43d424d51363fe9be.jpg"></image>
+            <text>关注“我来调查”微信公众号，获取最新动态</text>
+            <view class="survey-total">创建自己感兴趣的投票（调查）话题，帮助个人或企业获取并分析大众的意见。</view>
+        </view>
+    </view> 
+    <view class="height"></view>
+    <view class="mine-container">
+       <view class="list">
+           <view class="mine-item">
+            <image src="/images/icon-addr.png"></image>
+            <text>北京</text> 
+          </view>
+          <view  class="mine-item">
+            <image src="/images/icon-qq.png"></image>
+            <text>317147055</text> 
+          </view>
+          <view class="mine-item">
+            <image src="/images/icon-email.png"></image>
+            <text>yuanyang613@163.com</text> 
+          </view>
+         
+       </view>
+    </view>
+    <view class="height"></view>
+    <view class="mine-container">
+       <view class="list">
+          <view  class="mine-item">
+            <image style="background-color:#1aad16" src="/images/icon-kf.png"></image>
+            <button style="color:#1aad16" open-type='contact' type="" size="mini">进入客服</button> 
+          </view>
+       </view>
+    </view>
+    <view class="survey-total top">PS：需要置顶投票的朋友，请通过以上方式联系</view>
+</view>

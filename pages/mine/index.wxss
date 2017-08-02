@@ -1,0 +1,74 @@
+page{
+  background-color: #fff
+}
+.mine-container{
+	  /* margin-bottom:60rpx; */
+    background-color: #fff;
+    border-bottom: 2rpx solid #dbdbdb;
+    border-top: 2rpx solid #dbdbdb;
+}
+
+
+
+.user-photo{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	padding: 50rpx 30rpx;
+  background-color: #fff;
+  border-bottom: 2rpx solid #dbdbdb;
+}
+.user-photo text{
+	font-size: 28rpx;
+	margin-top: 8rpx;
+	color: #666
+}
+.user-photo image{
+	width: 100rpx;
+    height: 100rpx;
+	border-radius: 100%;
+    border: 2px solid rgba(221, 221, 221, 0.81);
+}
+.survey-total{
+	font-size: 28rpx;
+	margin-top: 20rpx;
+	color: #666
+}
+.survey-total text{
+	font-size: 32rpx;
+	color: #5f1971;
+}
+.height{
+	height: 10rpx;
+	background-color: #e5e9f2;
+	width: 100%;
+}
+.mine-item{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 28rpx 0 28rpx 20rpx;
+  border-bottom: 2rpx solid #dbdbdb;
+  font-size: 34rpx;
+}
+.mine-item:last-child{
+  margin-bottom: 0rpx;
+  border-bottom:none;
+}
+.mine-item text{
+  padding-left: 20rpx;
+  text-align: left;
+  flex: 1
+}
+.mine-item:active{
+  background-color: #eee;
+}
+.mine-item image:first-child{
+  width: 54rpx;
+  height: 54rpx;
+}
+.mine-item image:last-child{
+  width: 32rpx;
+  height: 32rpx;
+  padding-right: 20rpx;
+}

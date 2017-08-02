@@ -1,0 +1,52 @@
+<!--pages/mine/index.wxml-->
+<view class="page {{show?'pageShow':''}}">
+    <view class="mine-top">
+        <view class="user-photo">
+            <image src="{{userInfo===''?'/images/youke.png':userInfo.avatarUrl}}"></image>
+            <text>{{userInfo===''?'游客':userInfo.nickName}}</text>
+            <view class="survey-total">参与投票总数：<text>{{surveyCount}}</text></view>
+        </view>
+    </view>
+    <view class="height"></view>
+    <view class="mine-container">
+        <view wx:if="{{noData}}" class="no-data">
+            您还没有参与投票
+        </view>
+        <view wx:if="{{!noData}}"  class="ul payment-wizard" wx:for="{{surveyList}}">
+            <view class="li {{currLiActiveIndex===index?'active':''}}">
+                <view wx:if="{{item!=null}}"  data-idx="{{index}}" catchtap="wizardHeadTap" class="wizard-heading">
+                    <view class="survey-title ellipsis">{{index+1}}、{{item.title}}</view>
+                    <span class="icon-num">{{item.voteNums>99?"99+":item.voteNums}}</span>
+                </view>
+                 <view wx:else data-idx="{{index}}" catchtap="wizardHeadTap" class="wizard-heading">
+                    <view style="color:#e64340" class="survey-title ellipsis">{{index+1}}、投票已不存在</view>
+                    <span class="icon-num">0</span>
+                </view>
+                <view class="wizard-outer">
+                    <view class="wizard-content">
+                        <view wx:if="{{item!=null}}" data-survey-id="{{item.objectId}}" catchtap="watch" class="wizard-gird">
+                            <image mode="widthFix" src="/images/icon-watch.png"></image>
+                            <view>查看</view>
+                        </view>
+                        <view wx:if="{{item!=null}}" data-survey-id="{{item.objectId}}" catchtap="{{item.owner===userInfo.objectId?'edit':''}}" class="wizard-gird">
+                            <image mode="widthFix" src="{{item.owner===userInfo.objectId?'/images/icon-edit.png':'/images/icon-edit1.png'}}"></image>
+                            <view style="color:{{item.owner===userInfo.objectId?'':'#515151'}}">编辑</view>
+                        </view>
+                      
+                        <view wx:if="{{item!=null}}"  data-survey-id="{{item.objectId}}" catchtap="{{item.owner===userInfo.objectId?'del':''}}" class="wizard-gird">
+                            <image mode="widthFix" src="{{item.owner===userInfo.objectId?'/images/icon-del.png':'/images/icon-del1.png'}}"></image>
+                            <view style="color:{{item.owner===userInfo.objectId?'':'#515151'}}">删除</view>
+                        </view>
+                        <view wx:else data-participant-id="{{partIds[index]}}" catchtap="delPart" class="wizard-gird">
+                            <image mode="widthFix" src="/images/icon-del.png"></image>
+                            <view>删除</view>
+                        </view>
+                    </view>
+                </view>
+            </view>
+        </view>
+        <view  class="no-more-data">
+            {{surveyCount>0?noMoreDataTxt:''}}
+        </view>
+    </view>
+</view>

@@ -1,0 +1,31 @@
+<!--pages/mine/index.wxml-->
+<view class="page {{show?'pageShow':''}}">
+    <!-- <view class="mine-top">
+        <view class="user-photo">
+            <image src="{{userInfo===''?'/images/youke.png':userInfo.avatarUrl}}"></image>
+            <text>{{userInfo===''?'游客':userInfo.nickName}}</text>
+            <view class="survey-total">创建投票总数：<text>{{surveyCount}}</text></view>
+        </view>
+    </view>  -->
+    <view class="height" style="margin-top:100rpx;"></view>
+    <view class="mine-container">
+       <view class="list">
+          <view bindtap="create" class="mine-item">
+            <image src="/images/icon-add3.png"></image>
+            <text>创建的投票</text> 
+            <image src="/images/icon-arrow.png"></image>
+          </view>
+          <view bindtap="part" class="mine-item">
+            <image src="/images/icon-part.png"></image>
+            <text>参与的投票</text> 
+            <image src="/images/icon-arrow.png"></image>
+          </view>
+          <view bindtap="about" class="mine-item">
+            <image src="/images/icon-about2.png"></image>
+            <text>关于</text> 
+            <image src="/images/icon-arrow.png"></image>
+          </view>
+       </view>
+    </view>
+    <view class="height"></view>
+</view>

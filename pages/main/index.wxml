@@ -1,0 +1,85 @@
+<!--pages/main/index.wxml-->
+<view class="page {{show?'pageShow':''}}">
+<scroll-view  scroll-y style="height:100vh" bindscroll="scroll" scroll-with-animation='true' enable-back-to-top='true' scroll-top='{{scrollTop}}'>
+  <swiper indicator-dots="{{indicatorDots}}"
+  autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+    <block wx:for="{{bannerUrls}}" wx:for-index="idx">
+      <swiper-item class='swiper-item'>
+        <view class="slide-image" style="background-image:url({{item}})"></view>
+        <view class="slide-title">{{bannerTxt[idx]}}</view>
+      </swiper-item>
+    </block>
+  </swiper>
+  <view class="name-box {{typeNameFixed?'fixed':''}}">
+    <view bindtap="tab" data-type-name='new' class="type-name {{typeName==='new'?'on':''}}">
+      最新投票
+    </view>
+    <view bindtap="tab" data-type-name='hot' class="type-name {{typeName==='hot'?'on':''}}">
+      热门投票
+    </view>
+    <view class="realBorder {{typeName}}"></view>
+  </view>
+  
+  <view class="select-list {{typeName==='new'?'on':''}}">
+     <block wx:for="{{newSurveyList}}" wx:for-index="idx" wx:for-item="newSurvey">
+      <view class="panel widget-post">
+         <view bindtap="navigator" data-survey-id="{{newSurvey.id}}" class="panel-header">
+              <view style='background-image:url({{newSurveyList_imgs[idx]}})' class="header-img">
+                
+                <view wx:if="{{newSurvey.top==1}}" class="top-item">置顶</view>
+              </view>
+              <view class="panel-content">
+                <view class="text"> 
+                    <view  class="text-md">{{newSurvey.title}}</view>
+                </view>
+              </view>
+          </view>
+          <view class="panel-footer">
+              <view class="pull-right">
+                <image src="{{newSurveyList_users[idx].avatarUrl}}" mode="scaleToFill"></image>
+                 <text>{{newSurveyList_users[idx].nickName}}</text> 
+              </view>
+              <view class="pull-left">
+                <image src="/images/icon-cyz.png" mode="widthFix"></image>
+                <text style="margin-right:16rpx">{{newSurvey.voteNums}}</text>
+              </view>
+          </view>
+      </view>
+    </block>
+  </view>
+ 
+  <view class="select-list {{typeName==='hot'?'on':''}}">
+     <block wx:for="{{hotSurveyList}}" wx:for-index="idx" wx:for-item="hotSurvey">
+      <view class="panel widget-post">
+          <view bindtap="navigator" data-survey-id="{{hotSurvey.id}}" class="panel-header">
+              <!-- <image mode="center" src="{{hotSurveyList_imgs[idx]}}" /> -->
+              <view style='background-image:url({{hotSurveyList_imgs[idx]}})' class="header-img">
+                <view wx:if="{{hotSurvey.top==1}}" class="top-item">置顶</view>
+              </view>
+              <view class="panel-content">
+                <view class="text"> 
+                    <view  class="text-md">{{hotSurvey.title}}</view>
+                    <!-- <view class='text-sum'>{{hotSurvey.summary}}</view> -->
+                </view>
+              </view>
+          </view>
+          <view class="panel-footer">
+             
+              <view class="pull-right">
+                <image src="{{hotSurveyList_users[idx].avatarUrl}}" mode="scaleToFill"></image>
+                 <text>{{hotSurveyList_users[idx].nickName}}</text> 
+              </view>
+              <view class="pull-left">
+                <image src="/images/icon-cyz.png" mode="widthFix"></image><text style="margin-right:16rpx">{{hotSurvey.voteNums}}</text>
+              </view>
+              <!-- <view class="text-sm pull-right">{{hotSurvey.createdAt}}</view> -->
+          </view>
+      </view>
+    </block>
+  </view>
+  <view  class="no-more-data">
+      {{noMoreDataTxt}}
+  </view>
+</scroll-view>
+  
+</view>

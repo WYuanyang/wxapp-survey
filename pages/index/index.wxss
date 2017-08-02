@@ -1,0 +1,113 @@
+.page{background-color: #e5e9f2}
+.survey-add-container{
+  /*padding: 40rpx;*/
+  box-sizing: border-box
+}
+#survey-title{
+  border-bottom: 2rpx solid #d2d2d2;
+  box-sizing: border-box;
+  font-size: 40rpx;
+  margin-bottom: 30rpx;
+  padding: 16rpx 0;
+  height: 100rpx;
+  width:670rpx;
+}
+#survey-summary{
+  border: 2rpx solid #d2d2d2;
+  box-sizing: border-box;
+  width:670rpx;
+  padding: 10rpx;
+  font-size: 32rpx;
+  border-radius: 6rpx;
+  color: #999
+}
+.select-list{
+  font-size:30rpx;
+  box-sizing: border-box;
+  padding:40rpx;
+  background-color: #fff
+}
+.select-list .select-row.summary{
+  flex-direction: column;
+  align-items: flex-end;
+}
+.select-list .summary-tips{
+  margin-top: 10rpx;
+  font-size: 28rpx;
+  color: #e64340;
+  margin-right: 10rpx;
+}
+.select-list.top,.select-list.middle{
+  margin-bottom: 10rpx;
+}
+.select-list .select-row{
+  display: flex;
+  align-items: center;
+}
+.select-list .select-row .select-icon{
+  border-radius: 100%;
+  width:48rpx;
+  height: 48rpx;
+  color: #fff;
+  text-align: center;
+  line-height: 48rpx;
+  margin-right: 20rpx;
+  font-size: 24rpx
+}
+.select-list .select-row .select-icon.del{
+  background-color: #e64340;
+}
+.select-list .select-row .select-icon.del.disable{
+  background-color: #666
+}
+.select-list .select-row input{
+  border-bottom: 2rpx solid #d2d2d2;
+  box-sizing: border-box;
+  margin-bottom: 20rpx;
+  height: 90rpx;
+  flex: 1
+}
+.select-list .select-row .select-icon.add{
+  background-color: #5f1971;
+  margin-bottom: 40rpx
+}
+.select-list .select-row .add-txt{
+  color: #5f1971;
+  margin-bottom: 40rpx
+}
+.select-list .preview-imgs{
+  display: flex;
+  /*justify-content: space-between;*/
+  
+}
+.select-list .preview-imgs image{
+  background: #ddd;
+  width: 216rpx;
+  height:216rpx;
+  border-radius:6rpx;
+  margin-right: 21rpx; 
+}
+.select-list .preview-imgs image:last-child{
+  margin-right: 0;
+}
+.select-list.bottom .select-row {
+  justify-content: space-between;
+  /*margin-bottom: 40rpx;*/
+  border-bottom: 2rpx solid #d2d2d2;
+  padding: 30rpx 0;
+}
+.select-list.bottom .radio-group .radio{
+  height: 70rpx;
+  line-height: 70rpx;
+  display: inline-block;
+}
+.select-list.bottom .radio-group .radio radio{
+  margin:0 10rpx;
+  
+}
+.select-list.bottom .picker-row{
+  display: flex
+}
+.select-list.bottom .picker{
+  margin-right: 20rpx
+}

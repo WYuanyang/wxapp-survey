@@ -1,0 +1,44 @@
+@import "/pages/mine/index.wxss";
+.user-photo wx-image {
+  width:120rpx;
+  height:120rpx;
+  border-radius:0;
+  border:none;
+}
+.mine-container{
+  margin-bottom: 0;
+}
+.user-photo text {
+  font-size: 30rpx;
+  color: #333;
+}
+.survey-total{
+  line-height: 1.5;
+}
+.survey-total.top{
+  padding-left: 20rpx;
+  color:rgb(237, 85, 101);
+}
+.mine-item button{
+  flex: 1;
+  text-align: left;
+  border: none;
+  padding-left:20rpx;
+  margin: 0;
+  background-color: transparent;
+  font-size: 34rpx;
+}
+.mine-item text{
+  color: #666
+}
+.mine-item button:after{
+  width: 0;height: 0;
+}
+.mine-item image:first-child {
+  background-color: rgba(95, 25, 113, 0.8);
+  padding: 10rpx;
+  border-radius: 100%;
+
+
+
+}

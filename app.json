@@ -1,0 +1,50 @@
+{
+  "pages":[
+    "pages/index/index",
+    "pages/main/index",
+    "pages/mine/index",
+    "pages/mySurvey/index",
+    "pages/participate/index",
+    "pages/result/index",
+    "pages/about/index",
+    "pages/edit/index"
+  ],
+  "window":{
+    "navigationBarTextStyle": "black",
+    "navigationBarBackgroundColor": "#ffffff",
+    "backgroundColor": "white"
+    
+  },
+  "tabBar": {
+    "backgroundColor":"#fff",
+    "color":"#2c2c2c",
+    "borderStyle":"white",
+    "selectedColor":"#5f1971",
+    "list": [
+      {
+        "pagePath": "pages/main/index",
+        "text": "首页",
+        "iconPath": "images/icon-main1.png",
+        "selectedIconPath": "images/icon-main2.png"
+      },
+      {
+        "pagePath": "pages/index/index",
+        "text": "新建",
+        "iconPath":"images/icon-add1.png",
+        "selectedIconPath":"images/icon-add2.png"
+      },
+      {
+        "pagePath": "pages/mine/index",
+        "text": "我的",
+        "iconPath":"images/icon-mine1.png",
+        "selectedIconPath":"images/icon-mine2.png"
+      }
+    
+    ]
+  },
+  "networkTimeout": {
+    "request": 10000,
+    "downloadFile": 10000
+  },
+  "debug": false
+}

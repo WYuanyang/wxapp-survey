@@ -1,0 +1,69 @@
+<!--index.wxml-->
+<view class="page {{show?'pageShow':''}}">
+  <form bindsubmit="formSubmit">
+    <view class="survey-add-container">
+      <view class="error-tips {{errTipShow?'active':''}}">{{errTxt}}</view>
+      <view class="select-list top">
+        <view class="select-row">
+          <input name="title" id="survey-title" value="{{surveyInfo.title}}" placeholder="投票标题" type="text" />
+        </view>
+        <view class="select-row summary">
+          <textarea wx:if="{{show}}" name="summary" id="survey-summary" maxlength="200" value="{{surveyInfo.summary}}" placeholder="补充描述（选填）" ></textarea>
+          <view class="summary-tips">200字以内</view>
+        </view>
+      </view>
+      <view class="select-list middle">
+          <view wx:for="{{inputArr}}" class="select-row">
+            <view data-idx="{{index}}" catchtap="delInput" data-answer-id="{{item.objectId}}" class="select-icon del {{inputArr.length <=2 ? 'disable':''}}">-</view>
+            <input data-idx="{{index}}" bindinput="changeAnswer" name="answer{{index}}"  value="{{item.text}}" type="text" placeholder="选项描述" />
+          </view>
+          
+          <view bindtap="addInput" style="margin-top:20rpx" class="select-row" >
+            <view class="select-icon add">+</view>
+            <view  class="add-txt" >添加选项（2-10项）</view>
+          </view>
+          <view catchtap="chooseImage" class="select-row">
+            <view class="select-icon add">+</view>
+            <view class="add-txt" >添加图片（最多3张）</view>
+          </view>
+          <view  class="select-row preview-imgs">
+              <image data-idx="{{index}}" bindtap="previewImage" wx:for="{{uploadImgs}}" mode="aspectFill" src="{{item}}"></image>
+          </view>
+      </view>
+      <view class="select-list bottom">
+        <view  class="select-row">
+          <label>匿名投票</label>
+          <switch name="isAnonymity" id="anonym-switch" color="#5f1971" checked='{{surveyInfo.isAnonymity}}'/>
+        </view>
+        <view  class="select-row">
+          <label>公开投票</label>
+          <switch name="open" id="open-switch" color="#5f1971" checked='{{surveyInfo.open}}'/>
+        </view>
+        <view class="select-row">
+          <label>投票类型</label>
+          <radio-group name="type" class="radio-group" >
+              <label class="radio">单选<radio checked="{{surveyInfo.type==='0'}}" color="#5f1971" value="0" /></label>
+              <label  class="radio">多选<radio checked="{{surveyInfo.type==='1'}}" color="#5f1971" value="1" /></label>
+            </radio-group>
+        </view>
+        <view class="select-row" style="border-bottom:none">
+          <label>截止日期</label>
+          <view class="picker-row">
+              <picker name="date1" mode="date" value="{{surveyInfo.date1}}" start="{{startDay}}"  end="{{endDay}}" bindchange="bindDateChange">
+                <view class="picker">
+                  {{Deadline}}
+                </view>
+              </picker>
+              <picker name="date2" mode="time" value="{{surveyInfo.date2}}" start="00:00" end="23:59" bindchange="bindTimeChange">
+                <view class="picker">
+                  {{time}}
+                </view>
+            </picker>
+          </view>
+          
+        </view>
+        <button formType="submit" disabled="{{btnDisabled}}" type="default" loading="{{btnLoad}}" class="submit-btn">提交</button>
+      </view>
+    </view>
+  </form>
+</view>
