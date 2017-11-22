@@ -50,8 +50,8 @@ function wxlogin(app,cb){
       mask:true
     });
     AV.init({
-      appId: 'SEe3ofqL3ALU13Q1a8bNMrdT-gzGzoHsz',
-      appKey: 'xTYLAhivGL7V5U3DHNMGgILb',
+      appId: 'XXXXXXX',
+      appKey: 'XXXXXX',
     });
     AV.User.loginWithWeapp().then(user => {
       // console.log(user);
